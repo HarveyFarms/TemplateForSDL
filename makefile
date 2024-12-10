@@ -1,12 +1,16 @@
-main:
-	pdflatex hmwk.tex
-o:
-	nvim hmwk.tex
+d:	main.cpp
+	g++ main.cpp src/*.cpp src/*.c classes/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_mixer -lSDL_ttf -Iincludes -Iclasses; ./a.out
+
+a asan:	main.cpp
+	g++ main.cpp src/*.cpp src/*.c -g -fsanitize=address classes/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_mixer -lSDL_ttf -Iincludes -Iclasses
 r:
-	open hmwk.pdf
+	./a.out
+
 c:
-	rm hmwk*
+	rm ./a.out
+
 g:
 	git add -A ; git commit -m "sync" ; git push
+
 p:
 	git pull
