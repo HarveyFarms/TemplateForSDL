@@ -18,7 +18,7 @@ Game::~Game()
 
 void Game::run()
 {
-  int start, end, dt, RATE = s60FPS;
+  int start, end, dt, RATE = FPS;
   while (GAME_IS_RUNNING && !user_quits())
   {
     start = getTicks();
@@ -50,7 +50,4 @@ void Game::draw()
 
   surface->unlock();
   surface->flip();
-}
-void Game::reset_all()
-{
 }

@@ -28,22 +28,11 @@ private:
   // methods to run the game
   void get_input();
   void update();
-  void setup_ships();
   void draw();
-  void reset_all();
 
   // extra methods
   bool user_quits() 
   { return (event.poll() && event.type() == QUIT); }
-
-  // for user input for score saving
-  std::string in;
-  int save_score;
-  int place;
-  Image* in_image;
-  Rect* cursor;
-  bool blink;
-  int counter;
 
   // main objects for SDL
   Surface * surface;
